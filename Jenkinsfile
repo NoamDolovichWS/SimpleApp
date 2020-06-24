@@ -1,19 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Build'} {
+    stage('Build') {
       steps {
         sh "echo 'echo This is application version $BUILD_NUMBER!' > app.sh"
       }
     }
     
-    stage('Test'} {
+    stage('Test') {
       steps {
         sh "./app.sh"
       }
     }
     
-    stage('Deploy to Staging'} {
+    stage('Deploy to Staging') {
       steps {
         echo "deploying to staging"
       }
