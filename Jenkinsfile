@@ -28,14 +28,22 @@ pipeline {
     stage('Deploy to Production') {
       parallel {
         stage('Deploy to Production Saas') {
-          steps {
-            echo "deploying to production saas"
+          stages {
+            stage('Deploy') {
+              steps {
+                echo "deploying to production saas"
+              }  
+            }
           }
         }
-
+       
         stage('Deploy to Production App') {
-          steps {
-            echo "deploying to production app"
+          stages {
+            stage('Deploy') {
+              steps {
+                echo "deploying to production app"
+              }
+            }
           }
         }
       }
