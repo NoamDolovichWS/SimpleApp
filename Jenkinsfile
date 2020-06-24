@@ -20,7 +20,9 @@ pipeline {
     }
     
     stage('Sanity check') {
-      input "Deploy to production?"
+      steps {
+        input "Deploy to production?"
+      }
     }
     
     stage('Deploy to Production') {
