@@ -19,9 +19,11 @@ pipeline {
       }
     }
     
-    stage('Deploy to Production') {
+    stage('Sanity check') {
       input "Deploy to production?"
-      
+    }
+    
+    stage('Deploy to Production') {
       parallel {
         stage('Deploy to Production Saas') {
           steps {
